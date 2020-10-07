@@ -1,0 +1,55 @@
+<mat-card>
+    <span style="color: white ; font-size: 25px;">Public Requests</span>
+    <mat-card-content>
+      <mat-card-content class="content" *ngIf="!isShow">
+        <mat-card class="Cards" *ngFor="let card of obs | async">
+          <mat-card-title>
+            {{card.desc}}
+            <mat-card-content class="Button">
+              <button mat-raised-button style="margin-right: 5px;" color="accent"
+                (click)="toggleDisplay(card.id, card.title, card.desc, card.name, card.quantity, card.reward)">View</button>
+              <button mat-raised-button style="margin-left:3px;" color="accent">
+                <mat-icon>add_circle_outline</mat-icon> Add Reward
+              </button>
+            </mat-card-content>
+          </mat-card-title>
+        </mat-card>
+        <mat-paginator [hidePageSize]="true" [pageSizeOptions]="[5]"></mat-paginator>
+      </mat-card-content>
+
+
+      <mat-card-content class="content" *ngIf="isShow" style="height:450px ;">
+        <mat-card class="Cards" style="height:350px ;">
+          <mat-card-title>
+            {{desc}}
+          </mat-card-title>
+          <mat-card-content>
+            <span style="color: Grey ; font-size: 20px;">Category : </span>
+            <span style="color: White ; font-size: 20px;">{{title}}</span>
+          </mat-card-content>
+          <mat-card-content style="height: 100px;">
+            <mat-card-content>
+              <span style="color: Grey ; font-size: 20px;">Rewards :</span>
+              <ul style="font-size:20px;;">
+                <li *ngFor="let rew of rewards; let i = index">
+                  {{quantity[i]}} {{rew}} by {{name}}
+                </li>
+              </ul>
+            </mat-card-content>
+          </mat-card-content>
+          <mat-card-content class="Button">
+            <button mat-raised-button style="margin-right: 5px;margin-top:-30px;float:left" color="accent"
+              (click)="toggleDisplay()">
+              <mat-icon>keyboard_arrow_left</mat-icon> Back
+            </button>
+
+            <button mat-raised-button style="margin-right: 5px;margin-top:-30px;float:right" color="accent">Accept
+              Request</button>
+            <button mat-raised-button style="margin-right:5px;margin-top:-30px;float:right" color="accent"  >
+              <mat-icon>add_circle_outline</mat-icon> Add Reward
+            </button>
+          </mat-card-content>
+        </mat-card>
+      </mat-card-content>
+    </mat-card-content>
+  </mat-card>

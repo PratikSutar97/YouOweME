@@ -1,0 +1,43 @@
+<mat-card-content >
+    <span style="color: white ; font-size: 25px;">Create Public Request</span>
+    <div class="container">
+
+        <form class="example-form">
+            <mat-form-field class=" fill example-full-width">
+                <mat-label>Request</mat-label>
+                <input matInput placeholder="Ex. Office Work or Shop Work or Kitchen Work etc">
+            </mat-form-field>
+            <mat-form-field class=" fill example-full-width">
+              <mat-label>Description</mat-label>
+              <input matInput placeholder="Ex. Clean a Fridge">
+          </mat-form-field>
+          <mat-form-field class="fill example-full-width" style="width:20%">
+            <mat-label>Quantity</mat-label>
+            <mat-select>
+                <mat-option value="1">1</mat-option>
+                <mat-option value="2">2</mat-option>
+                <mat-option value="3">3</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="5">5</mat-option>
+                <mat-option value="6">6</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+            <mat-form-field class="fill example-full-width" style="width: 70%;margin-left:70px">
+                <mat-label>Reward</mat-label>
+                <mat-select>
+                    <mat-option value="pizza">Pizza</mat-option>
+                    <mat-option value="coffee">Coffee</mat-option>
+                    <mat-option value="chips">Chips</mat-option>
+                    <mat-option value="burger">Burger</mat-option>
+                    <mat-option value="chocolate">Chocolates</mat-option>
+                    <mat-option value="tea">Tea</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div style="text-align: right; margin-top: 20px;">
+                <button mat-raised-button color="accent">Submit</button>
+                <button mat-raised-button color="accent" style="margin-left:20px"><mat-icon>add_circle_outline</mat-icon>Add Another Reward</button>
+              </div>
+        </form>
+    </div>
+</mat-card-content>

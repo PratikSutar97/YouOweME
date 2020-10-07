@@ -1,0 +1,2 @@
+Use the follow set of fxFlex directives when setting the RHS content;
+( fxFlex.lt-sm="100%" fxFlex.lt-md="50%" fxFlex.lt-lg="33%" fxFlex.lt-xl="25%" )

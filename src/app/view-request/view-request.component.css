@@ -1,0 +1,29 @@
+@media screen and (max-width: 767px) {
+.content {
+    height: auto;
+    }
+}
+
+.content{
+    display: inline;
+    padding: 5px;
+    flex-flow: column;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    margin-bottom: 73px;
+}
+
+.Cards{
+    min-width: 150px;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #16171b;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom:5px ;
+}
+
+.Button{
+    float: right;
+}

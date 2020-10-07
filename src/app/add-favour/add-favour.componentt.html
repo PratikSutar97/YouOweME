@@ -1,0 +1,36 @@
+<div fxFlex="100%">
+  <span style="color: white ; font-size: 25px;">Add Favour</span>
+      <form class="addFavor-form">
+        <mat-form-field appearance="fill">
+          <mat-label>Person 1 </mat-label>
+          <mat-select>
+            <mat-option *ngFor="let user of userList" [value]="user">
+            {{user}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <span style="color: #fff; padding: 20px;">Owes</span>
+        <mat-form-field appearance="fill">
+          <mat-label>Person 2</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let user of userList" [value]="user">
+              {{user}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="addFavor-full-width">
+            <mat-label>Favor</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let favor of favorList" [value]="favor">
+                 {{favor}}
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+
+          <div style="text-align: center;">
+              <button mat-raised-button color="accent">submit</button>
+          </div>
+
+      </form>
+</div>

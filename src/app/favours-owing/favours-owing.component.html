@@ -1,0 +1,17 @@
+<div fxFlex="100%">
+  <span style="color: white ; font-size: 25px;">Favours Owing</span>
+  <div>
+    <div class="content">
+      <mat-card class="Cards" *ngFor="let card of [1,2,3,4,5]">
+        <mat-card-title>
+          You owe Favour {{card}} to Bob
+          <div class="Button">
+            <button mat-raised-button style="margin-right: 5px;" color="accent">View</button>
+            <button mat-raised-button style="margin-left:3px;" color="accent">Return Favour</button>
+          </div>
+        </mat-card-title>
+      </mat-card>
+      <mat-paginator [hidePageSize]="true" [pageSizeOptions]="[5]"></mat-paginator>
+    </div>
+  </div>
+</div>

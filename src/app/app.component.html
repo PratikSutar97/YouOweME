@@ -1,0 +1,118 @@
+<div class="Mainframe">
+<div class="content-container" fxLayout="row">
+  <div class="LHS-controlPanel" fxLayout="column" fxFlex="20%" fxLayoutGap="16px grid">
+    <div>
+      <mat-card class="LHS-controlPanelCard">
+        <mat-card-content>
+          <div class="userOperations">
+            <div style="display: flex; align-items: center;">
+              <span>Ben Johns</span>
+            </div>
+            <button mat-icon-button class="" aria-label="">
+              <mat-icon color="accent">login</mat-icon>
+            </button>
+          </div>
+
+          <div class="userActions">
+            <mat-nav-list>
+              <span style="font-style: italic">User Actions</span>
+              <mat-list-item>
+                <mat-icon>assessment</mat-icon>
+                Overview
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon>add_alert</mat-icon>
+                Alerts
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon>done_all</mat-icon>
+                Confirmations
+              </mat-list-item>
+              <mat-list-item>
+                <mat-icon>account_box</mat-icon>
+                My Account
+              </mat-list-item>
+            </mat-nav-list>
+          </div>
+
+          <div class="userActions">
+            <mat-nav-list>
+              <span style="font-style: italic">Favors</span>
+              <mat-list-item [routerLink]="['/addFavour']">
+                <mat-icon>assessment</mat-icon>
+                Add Favor
+              </mat-list-item>
+              <mat-list-item [routerLink]="['/favoursOwing']">
+                <mat-icon>arrow_downward</mat-icon>
+                View Favors Owing
+              </mat-list-item>
+              <mat-list-item [routerLink]="['/favoursGiven']">
+                <mat-icon>arrow_upward</mat-icon>
+                View Favors Given
+              </mat-list-item>
+            </mat-nav-list>
+          </div>
+
+          <div class="userActions">
+            <mat-nav-list>
+              <span style="font-style: italic">Requests</span>
+              <mat-list-item [routerLink]="['/addRequest']">
+                <mat-icon>assessment</mat-icon>
+                Create Public Request
+              </mat-list-item>
+              <mat-list-item [routerLink]="['/viewPublic']">
+                <mat-icon>thumbs_up_down</mat-icon>
+                View Public Requests
+              </mat-list-item>
+            </mat-nav-list>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+<span style="visibility: hidden"><><</span>
+
+  <div class="RHS-content" fxLayout="row wrap" fxLayoutGap="20px grid" fxFlex="100%">
+    <div fxFlex="100%">
+      <mat-card class="top-dashboard-card">
+        <mat-card-content class="top-dashboard">
+          <div class = "item1">
+            <span style="font-size: 22px;">Today</span>
+            <span>{{ time | date: 'hh:mm:ss a' }}</span>
+            <span>{{ time | date: 'dd/MM/yyyy' }}</span>
+          </div>
+          <div class="item2">
+            <span style="font-size: 22px;">Total Registered</span>
+            <span *ngIf="totalUsers != -1">{{totalUsers}} Users</span>
+            <span *ngIf="totalUsers == -1">loading users count!</span>
+            <span style="visibility: hidden">.</span>
+          </div>
+          <div class="item3">
+            <span style="font-size: 22px;">All-Time Favors</span>
+            <span *ngIf="totalFavorsTaken != -1">{{totalFavorsTaken}} Favors Taken</span>
+            <span *ngIf="totalFavorsTaken == -1">loading favors taken count!</span>
+
+            <span *ngIf="totalFavorsGivenBack != -1">{{totalFavorsGivenBack}} Favors Given Back</span>
+            <span *ngIf="totalFavorsGivenBack == -1">loading favors given back count!</span>
+          </div>
+          <div class="item4">
+            <span style="font-size: 22px;">All-Time Requests</span>
+            <span *ngIf="totalRequestsPublished != -1">{{totalRequestsPublished}} Requests Published</span>
+            <span *ngIf="totalRequestsPublished == -1">loading requests published count!</span>
+
+            <span *ngIf="totalRequestsFulfilled != -1">{{totalRequestsFulfilled}} Requests Fulfilled</span>
+            <span *ngIf="totalRequestsFulfilled == -1">loading requests fulfilled count!</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div>
+        <div class="Router">
+              <router-outlet></router-outlet>
+        </div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</div>
